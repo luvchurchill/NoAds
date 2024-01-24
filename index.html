@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Embed YouTube Video</title>
+    <script>
+        function updateYouTubeSrc() {
+            var youtubeLink = document.getElementById('youtubeLink').value;
+            var videoId = youtubeLink.split('watch?v=')[1];
+            var embedUrl = 'https://www.youtube.com/embed/' + videoId;
+            var iframe = document.querySelector('iframe');
+            if (iframe) {
+                iframe.src = embedUrl;
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="youtubeLink" placeholder="Enter YouTube Link">
+    <button onclick="updateYouTubeSrc()">Embed Video</button>
+    <br>
+    <iframe width="420" height="315" src="" title="No Ads!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</body>
+</html>
